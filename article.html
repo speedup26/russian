@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">البحث الأكاديمي | دوريات البيت الروسي بالقاهرة</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Academic Journal Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="academic-paper-page">
+
+  <!-- Top Academic Metadata Bar -->
+  <div class="journal-top-meta">
+    <div class="container journal-meta-inner">
+      <div class="meta-left-badges">
+        <span class="issn-badge">ISSN 2958-8421 (Online)</span>
+        <span class="peer-badge"><i class="fa-solid fa-check-double"></i> Peer-Reviewed Academic Journal</span>
+        <span class="oa-badge"><i class="fa-solid fa-lock-open"></i> Open Access (CC BY 4.0)</span>
+      </div>
+
+      <div class="meta-right-actions">
+        <a href="index.html" class="back-to-home-link">
+          <i class="fa-solid fa-arrow-right"></i>
+          <span id="txtBackHome">العودة لفهرس الدوريات والأبحاث</span>
+        </a>
+        <button class="lang-toggle-pill" id="articleLangToggle">
+          <i class="fa-solid fa-globe"></i>
+          <span id="txtLangSwitch">English</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Journal Header Brand -->
+  <header class="journal-masthead">
+    <div class="container masthead-inner">
+      <a href="index.html" class="masthead-brand">
+        <img src="assets/logo.jpg" alt="شعار المركز الروسي" class="masthead-logo">
+        <div class="masthead-titles">
+          <h1 id="txtJournalTitle">سلسلة الأبحاث والدراسات الثقافية للمركز الروسي بمصر</h1>
+          <p id="txtJournalSub">Russian House Academic & Cultural Reviews (Cairo & Alexandria)</p>
+        </div>
+      </a>
+
+      <div class="journal-nav-links">
+        <a href="index.html#volumes" id="navIssues">المجلدات والأعداد</a>
+        <a href="index.html#categories" id="navCategories">التصنيفات العلمية</a>
+        <a href="index.html#editorial" id="navEditorial">هيئة التحرير</a>
+        <a href="index.html#about" id="navAims">عن الدورية والاعتماد</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs & DOI Bar -->
+  <div class="article-breadcrumb-strip">
+    <div class="container breadcrumb-flex">
+      <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+        <a href="index.html" id="bcHome">الرئيسية</a>
+        <i class="fa-solid fa-chevron-left bc-sep"></i>
+        <span id="bcCategory">التصنيف</span>
+        <i class="fa-solid fa-chevron-left bc-sep"></i>
+        <span class="bc-current" id="bcTitle">عنوان البحث</span>
+      </nav>
+
+      <div class="doi-display-box">
+        <span class="doi-label">DOI:</span>
+        <a href="#" id="doiLink" class="doi-val" target="_blank" rel="noopener">10.5937/rhc.2026.01.001</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Viewport Container -->
+  <main class="article-viewport-container">
+    <div class="container article-layout-grid">
+      
+      <!-- Primary Article Column -->
+      <article class="article-main-column">
+        <!-- Article Header Metadata -->
+        <header class="paper-header">
+          <div class="paper-category-pill" id="paperCategory">الأدب والدراسات النقدية</div>
+          <h1 class="paper-headline" id="paperHeadline">...</h1>
+
+          <!-- Authors and Affiliations List -->
+          <div class="authors-roster" id="authorsRoster">
+            <!-- Dynamically populated -->
+          </div>
+
+          <div class="affiliations-list" id="affiliationsList">
+            <!-- Affiliations -->
+          </div>
+
+          <!-- Academic Dates & Metrics Bar -->
+          <div class="paper-dates-shelf">
+            <div class="date-item">
+              <span class="date-lbl" id="lblReceived">تاريخ الاستلام:</span>
+              <span class="date-val" id="valReceived">-</span>
+            </div>
+            <div class="date-item">
+              <span class="date-lbl" id="lblAccepted">تاريخ القبول:</span>
+              <span class="date-val" id="valAccepted">-</span>
+            </div>
+            <div class="date-item">
+              <span class="date-lbl" id="lblPublished">تاريخ النشر:</span>
+              <span class="date-val" id="valPublished">-</span>
+            </div>
+            <div class="metrics-item">
+              <span><i class="fa-regular fa-eye"></i> <strong id="valViews">0</strong> <span id="lblViews">مشاهدة</span></span>
+              <span><i class="fa-solid fa-download"></i> <strong id="valDownloads">0</strong> <span id="lblDownloads">تحميل</span></span>
+            </div>
+          </div>
+
+          <!-- Action Toolbar (PDF, Cite, Print, Font) -->
+          <div class="paper-actions-toolbar">
+            <button class="btn-tool-primary" onclick="window.print()">
+              <i class="fa-solid fa-file-pdf"></i>
+              <span id="btnDownloadPdf">تحميل / طباعة البحث (PDF)</span>
+            </button>
+            <button class="btn-tool-secondary" onclick="openCitationModal()">
+              <i class="fa-solid fa-quote-left"></i>
+              <span id="btnCite">نسخ التوثيق (Cite)</span>
+            </button>
+            <button class="btn-tool-secondary" onclick="shareArticle()">
+              <i class="fa-solid fa-share-nodes"></i>
+              <span id="btnShare">مشاركة</span>
+            </button>
+            
+            <div class="font-zoom-tools">
+              <span id="lblFontSize">حجم الخط:</span>
+              <button onclick="adjustFontSize(-1)" aria-label="تصغير الخط">A-</button>
+              <button onclick="adjustFontSize(1)" aria-label="تكبير الخط">A+</button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Abstract & Keywords Callout -->
+        <section class="abstract-callout-card">
+          <h2 class="abstract-heading" id="txtAbstractHeading">المستخلص (Abstract)</h2>
+          <p class="abstract-body" id="abstractBody">...</p>
+          
+          <div class="keywords-row">
+            <strong id="txtKeywordsLabel">الكلمات المفتاحية:</strong>
+            <div class="keywords-tags" id="keywordsTags"></div>
+          </div>
+        </section>
+
+        <!-- Full Research Content -->
+        <section class="paper-body-text" id="paperBodyText">
+          <!-- Research content populated dynamically -->
+        </section>
+
+        <!-- Academic References -->
+        <section class="paper-references-section">
+          <h3 class="references-title" id="txtReferencesTitle">المراجع والمصادر الموثقة (References)</h3>
+          <ol class="references-list" id="referencesList">
+            <!-- References list -->
+          </ol>
+        </section>
+
+        <!-- Author Copyright & Open Access Statement -->
+        <footer class="paper-copyright-notice">
+          <div class="license-shield"><i class="fa-brands fa-creative-commons"></i><i class="fa-brands fa-creative-commons-by"></i></div>
+          <div>
+            <h4 id="txtCopyrightTitle">حقوق الملكية الفكرية والوصول المفتوح</h4>
+            <p id="txtCopyrightDesc">
+              هذا البحث منشور بموجب ترخيص المشاع الإبداعي الدولي Creative Commons Attribution 4.0 International (CC BY 4.0). يُسمح بالنسخ وإعادة التوزيع والاقتباس شريطة ذكر المصدر الأصلي ونسب العمل لأصحابه.
+            </p>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Scholarly Sidebar -->
+      <aside class="article-sidebar-column">
+        <!-- Table of Contents -->
+        <div class="sidebar-academic-widget">
+          <h4 class="widget-title" id="txtTocTitle"><i class="fa-solid fa-list-ul"></i> محتويات البحث</h4>
+          <ul class="toc-links-list" id="tocLinks">
+            <li><a href="#abstractBody" id="tocAbstract">المستخلص</a></li>
+            <li><a href="#paperBodyText" id="tocContent">نص البحث الكامل</a></li>
+            <li><a href="#referencesList" id="tocReferences">المراجع والتوثيق</a></li>
+          </ul>
+        </div>
+
+        <!-- Issue & Journal Information -->
+        <div class="sidebar-academic-widget">
+          <h4 class="widget-title" id="txtJournalInfoTitle"><i class="fa-solid fa-book-journal-whills"></i> بيانات الدورية</h4>
+          <div class="journal-sidebar-specs">
+            <div><strong id="lblSidebarJournal">الدورية:</strong> <span>سلسلة أبحاث البيت الروسي بمصر</span></div>
+            <div><strong id="lblSidebarPublisher">الناشر:</strong> <span>المركز الروسي للعلوم والثقافة بالقاهرة</span></div>
+            <div><strong id="lblSidebarVolume">المجلد والعدد:</strong> <span id="valSidebarVol">المجلد 14، العدد 1</span></div>
+            <div><strong>e-ISSN:</strong> <span>2958-8421</span></div>
+            <div><strong id="lblSidebarIndexing">الفهرسة:</strong> <span>Crossref, Google Scholar, DOAJ Candidate</span></div>
+          </div>
+        </div>
+
+        <!-- Related Research Papers -->
+        <div class="sidebar-academic-widget">
+          <h4 class="widget-title" id="txtRelatedTitle"><i class="fa-solid fa-newspaper"></i> أبحاث ذات صلة</h4>
+          <div class="related-papers-list" id="relatedPapersList">
+            <!-- Related papers loaded dynamically -->
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Scholarly Journal Footer -->
+  <footer class="journal-footer">
+    <div class="container">
+      <div class="journal-bottom-row">
+        <span>نسخة تجريبية (Demo) مصممة ومطوّرة بواسطة شركة سبيد اب (Speed Up) • جميع حقوق التصميم والبرمجة والتنفيذ محفوظة لشركة سبيد اب © 2026</span>
+        <span style="color: var(--journal-gold); font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <i class="fa-solid fa-rocket"></i> Developed by Speed Up
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Citation Modal -->
+  <div class="citation-modal-overlay" id="citationModal">
+    <div class="citation-modal-card">
+      <div class="citation-modal-head">
+        <h3 id="txtCitationModalTitle">توثيق واقتباس البحث (Cite this Article)</h3>
+        <button class="btn-close-modal" onclick="closeCitationModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="citation-modal-body">
+        <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0.75rem;">اختر الصيغة الأكاديمية وانسخ التوثيق:</p>
+        
+        <div class="citation-format-block">
+          <div class="format-header"><strong>APA 7th Edition:</strong></div>
+          <pre id="citationTextApa" class="citation-pre"></pre>
+          <button class="btn-copy-format" onclick="copyFormat('citationTextApa')"><i class="fa-regular fa-copy"></i> نسخ بصيغة APA</button>
+        </div>
+
+        <div class="citation-format-block" style="margin-top: 1rem;">
+          <div class="format-header"><strong>BibTeX:</strong></div>
+          <pre id="citationTextBib" class="citation-pre"></pre>
+          <button class="btn-copy-format" onclick="copyFormat('citationTextBib')"><i class="fa-regular fa-copy"></i> نسخ بصيغة BibTeX</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-banner" id="toastBanner" role="alert">
+    <i class="fa-solid fa-circle-check" style="color: var(--gold-bright); font-size: 1.25rem;"></i>
+    <span id="toastMsgText">تم نسخ التوثيق بنجاح!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/articles-data.js"></script>
+  <script src="js/article-viewer.js"></script>
+</body>
+</html>
+

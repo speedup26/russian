@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سلسلة أبحاث ودراسات المركز الثقافي الروسي بمصر | Russian House Academic Reviews</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Scholarly Publishing Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Metadata & Accreditation Bar -->
+  <div class="journal-top-meta">
+    <div class="container journal-meta-inner">
+      <div class="meta-left-badges">
+        <span class="issn-badge" data-i18n="issnText">ISSN 2958-8421 (Online)</span>
+        <span class="peer-badge"><i class="fa-solid fa-check-double"></i> <span data-i18n="peerReviewed">دورية محكمة ومفهرسة دولياً</span></span>
+        <span class="oa-badge"><i class="fa-solid fa-lock-open"></i> <span data-i18n="openAccess">نشر مفتوح (CC BY 4.0)</span></span>
+      </div>
+
+      <div class="meta-right-actions">
+        <span style="font-size: 0.78rem; color: #94a3b8;">Rossotrudnichestvo • Russian Ministry of Foreign Affairs</span>
+        <button class="lang-toggle-pill" id="homeLangToggle">
+          <i class="fa-solid fa-globe"></i>
+          <span data-i18n="langToggle">English</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Journal Masthead Header -->
+  <header class="journal-masthead">
+    <div class="container masthead-inner">
+      <a href="index.html" class="masthead-brand">
+        <img src="assets/logo.jpg" alt="شعار المركز الروسي للعلوم والثقافة" class="masthead-logo">
+        <div class="masthead-titles">
+          <h1 data-i18n="mastheadTitle">سلسلة أبحاث ودراسات المركز الثقافي الروسي بمصر</h1>
+          <p data-i18n="mastheadSub">Russian House Academic & Cultural Reviews (Cairo & Alexandria)</p>
+        </div>
+      </a>
+
+      <nav class="journal-nav-links">
+        <a href="#feed" class="active" data-i18n="navHome">الرئيسية</a>
+        <a href="#volumesModal" onclick="openVolumesModal(); return false;" data-i18n="navIssues">المجلدات والأعداد</a>
+        <a href="#categories" data-i18n="navCategories">التصنيفات العلمية</a>
+        <a href="editorial.html" data-i18n="navEditorial">هيئة التحرير</a>
+        <a href="submissions.html" data-i18n="navGuidelines">أخلاقيات النشر والتحكيم</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Academic Search & Discovery Hero -->
+  <section class="academic-search-hero">
+    <div class="container">
+      <div class="search-hero-content">
+        <h2 data-i18n="searchHeroTitle">مستودع الأبحاث والدراسات الثقافية المفتوحة</h2>
+        <p data-i18n="searchHeroSub">تصفح مئات الأوراق البحثية المحكمة والمقالات التوثيقية الصادرة عن لجان المركز الثقافي الروسي في القاهرة والإسكندرية</p>
+
+        <div class="search-dock-input-wrap">
+          <input type="text" id="searchArticlesInput" class="search-dock-input" placeholder="ابحث في الأبحاث بعنوان الورقة، اسم الباحث، الكلمات المفتاحية، أو رمز DOI...">
+          <i class="fa-solid fa-magnifying-glass search-dock-icon"></i>
+        </div>
+
+        <div class="metrics-horizontal-strip">
+          <span><i class="fa-solid fa-layer-group" style="color: var(--journal-gold);"></i> <strong data-i18n="metricTracks">6 مسارات بحثية متخصصة</strong></span>
+          <span><i class="fa-solid fa-lock-open" style="color: #22c55e;"></i> <strong data-i18n="metricOpenAccess">وصول حر كامل 100% مجاناً</strong></span>
+          <span><i class="fa-solid fa-fingerprint" style="color: #60a5fa;"></i> <strong data-i18n="metricDoi">معرفات رقمية مسجلة Crossref DOI</strong></span>
+          <span><i class="fa-solid fa-user-shield" style="color: #facc15;"></i> <strong data-i18n="metricPeerReview">تحكيم أقران مزدوج التعمية</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Portal Section (Articles Feed + Academic Sidebar) -->
+  <main class="portal-main-layout" id="feed">
+    <div class="container layout-grid-columns">
+
+      <!-- Left / Main Column: Research Feed -->
+      <section class="research-feed-column">
+        <!-- Filter Bar -->
+        <div class="portal-filter-bar" id="categories">
+          <div class="filter-pills-shelf">
+            <button class="filter-tab-btn active" data-category="all" data-i18n="tabAll">جميع الأبحاث والدوريات</button>
+            <button class="filter-tab-btn" data-category="literature" data-i18n="tabLiterature">الأدب والترجمة</button>
+            <button class="filter-tab-btn" data-category="ballet" data-i18n="tabBallet">الفنون والباليه</button>
+            <button class="filter-tab-btn" data-category="nuclear" data-i18n="tabNuclear">العلوم والطاقة النووية</button>
+            <button class="filter-tab-btn" data-category="linguistics" data-i18n="tabLinguistics">اللغويات وTORFL</button>
+            <button class="filter-tab-btn" data-category="cinema" data-i18n="tabCinema">السينما والفنون المرئية</button>
+            <button class="filter-tab-btn" data-category="history" data-i18n="tabHistory">التاريخ والدبلوماسية</button>
+          </div>
+          <span class="results-count-badge" id="resultsCountBadge">عرض 6 أبحاث محكّمة</span>
+        </div>
+
+        <!-- Featured Lead Paper Box -->
+        <div id="featuredPaperContainer">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Remaining Papers Feed -->
+        <div class="papers-feed-list" id="papersFeedContainer">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- Right Academic Sidebar -->
+      <aside class="academic-sidebar-column">
+        <!-- About Widget -->
+        <div class="sidebar-academic-widget" id="about">
+          <h4 class="widget-title" data-i18n="sidebarAboutTitle"><i class="fa-solid fa-circle-info"></i> عن الدورية والرسالة</h4>
+          <p style="font-size: 0.85rem; line-height: 1.7; color: var(--text-secondary);" data-i18n="sidebarAboutText">
+            دورية علمية وثقافية نصف سنوية تصدر عن المركز الثقافي الروسي بجمهورية مصر العربية (وكالة روس سوترودنيتشيستفو). تهدف إلى تعزيز البحوث البينية في الأدب، الفنون، اللغويات التطبيقية، والتاريخ المشترك بين مصر وروسيا.
+          </p>
+        </div>
+
+        <!-- Editorial Leadership Widget -->
+        <div class="sidebar-academic-widget" id="editorial">
+          <h4 class="widget-title" data-i18n="sidebarEditorialTitle"><i class="fa-solid fa-users-gear"></i> هيئة التحرير الاستشارية</h4>
+          <div class="editorial-board-summary">
+            <div class="editor-card-item">
+              <div class="editor-name" data-i18n="editor1Name">مراد جاتين (Marat Gatin)</div>
+              <div class="editor-role" data-i18n="editor1Role">رئيس التحرير - مدير المراكز الثقافية الروسية بمصر</div>
+            </div>
+            <div class="editor-card-item">
+              <div class="editor-name" data-i18n="editor2Name">م. شريف جاد (Sherif Gad)</div>
+              <div class="editor-role" data-i18n="editor2Role">مدير التحرير التنفيذي - رئيس جمعية الخريجين</div>
+            </div>
+            <div class="editor-card-item">
+              <div class="editor-name" data-i18n="editor3Name">أ.د. أحمد كمال الشريف</div>
+              <div class="editor-role" data-i18n="editor3Role">رئيس لجنة الدراسات السلافية - جامعة عين شمس</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indexing & DOI Widget -->
+        <div class="sidebar-academic-widget">
+          <h4 class="widget-title" data-i18n="sidebarIndexingTitle"><i class="fa-solid fa-fingerprint"></i> الفهرسة والأرشفة الرقمية</h4>
+          <p style="font-size: 0.84rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 0.75rem;" data-i18n="sidebarIndexingText">
+            جميع الأبحاث تحصل على معرّفات رقمية دائمة (DOIs) مسجلة لدى Crossref، وتؤرشف أعدادها في مكتبة الإسكندرية ودار الكتب والوثائق القومية المصرية وقاعدة Google Scholar.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="background: #eef2f6; color: #1e3a8a; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">Crossref DOI</span>
+            <span style="background: #eef2f6; color: #1e3a8a; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">Google Scholar</span>
+            <span style="background: #eef2f6; color: #1e3a8a; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">DOAJ Model</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Scholarly Journal Footer -->
+  <footer class="journal-footer">
+    <div class="container">
+      <div class="journal-footer-grid">
+        <div>
+          <h4 data-i18n="footerAboutTitle">المركز الروسي للعلوم والثقافة بمصر</h4>
+          <p style="line-height: 1.7; font-size: 0.85rem;" data-i18n="footerAboutText">
+            منصة النشر العلمي المفتوح المعنية بتوثيق ونشر الأبحاث والدراسات الثقافية بين جمهورية مصر العربية وروسيا الاتحادية.
+          </p>
+        </div>
+
+        <div>
+          <h5 data-i18n="footerSectionsTitle">أقسام الدورية</h5>
+          <ul>
+            <li><a href="#feed" onclick="document.querySelector('[data-category=literature]').click()">الأدب والدراسات النقدية</a></li>
+            <li><a href="#feed" onclick="document.querySelector('[data-category=ballet]').click()">الفنون والباليه الكلاسيكي</a></li>
+            <li><a href="#feed" onclick="document.querySelector('[data-category=nuclear]').click()">العلوم ومحطة الضبعة</a></li>
+            <li><a href="#feed" onclick="document.querySelector('[data-category=linguistics]').click()">اللسانيات واختبارات TORFL</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 data-i18n="footerLinksTitle">المستودعات الأكاديمية</h5>
+          <ul>
+            <li><a href="https://rs.gov.ru" target="_blank" rel="noopener">Rossotrudnichestvo (روس سوترودنيتشيستفو)</a></li>
+            <li><a href="https://education-in-russia.com" target="_blank" rel="noopener">Education in Russia Portal</a></li>
+            <li><a href="https://doi.org" target="_blank" rel="noopener">Crossref Metadata Search</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>المقرات الرسمية</h5>
+          <p style="font-size: 0.82rem; line-height: 1.8;">
+            <strong>فرع القاهرة:</strong> 127 شارع التحرير، الدقي، الجيزة.<br>
+            <strong>فرع الإسكندرية:</strong> 5 شارع البطالسة، الأزاريطة، باب شرق.<br>
+            <strong>الاتصال الأكاديمي:</strong> info@rhc-egypt.org
+          </p>
+        </div>
+      </div>
+
+      <div class="journal-bottom-row">
+        <span data-i18n="footerCopy">نسخة تجريبية (Demo) مصممة ومطوّرة بواسطة شركة سبيد اب (Speed Up) • جميع حقوق التصميم والبرمجة والتنفيذ محفوظة لشركة سبيد اب © 2026</span>
+        <span style="color: var(--journal-gold); font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem;">
+          <i class="fa-solid fa-rocket"></i> Developed by Speed Up
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/articles-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
